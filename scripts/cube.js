@@ -24,9 +24,9 @@ const layers = {
 	l: { corners: [3, 1, 5, 7], edges: [1, 9, 5, 11] },
 	b: { corners: [2, 3, 7, 6], edges: [3, 11, 7, 10] },
 	d: { corners: [4, 6, 7, 5], edges: [4, 6, 7, 5] },
-	m: { middles: ['l', 'b', 'r', 'f'], edges: [11, 10, 8, 9] },
-	e: { middles: ['f', 'u', 'b', 'd'], edges: [4, 0, 3, 7] },
-	a: { middles: ['r', 'd', 'l', 'u'], edges: [6, 5, 1, 2] },
+	e: { middles: ['f', 'r', 'b', 'l'], edges: [9, 8, 10, 11] },
+	m: { middles: ['d', 'b', 'u', 'f'], edges: [7, 3, 0, 4] },
+	s: { middles: ['r', 'd', 'l', 'u'], edges: [6, 5, 1, 2] }
 };
 
 /** Adds classes to cubies to start animation. */
@@ -99,11 +99,11 @@ function updateCubie() {
 		div = div.children[0];
 		re = /(cubie-edge-orientation-)(\d+)/;
 		match = div.className.match(re);
-		newVal = +match[2] ^ ((side == 'f' || side == 'b' || side == 'm' || side == 'e' || side == 'a') & step);
+		newVal = +match[2] ^ ((side == 'f' || side == 'b' || side == 'm' || side == 'e' || side == 's') & step);
 		div.className = div.className.replace(re, '$1' + newVal);
 	}
 
-	if (side == 'm' || side == 'e' || side == 'a') {
+	if (side == 'm' || side == 'e' || side == 's') {
 		div = this.children[0];
 		re = /(cubie-middle-)([a-z]+)/;
 		if ((match = div.className.match(re))) {
@@ -122,7 +122,7 @@ function updateCubie() {
 /**	Generates and executes random move */
 var nextMove = (function () {
 	var prevSide = '';
-	var sides = ['u', 'f', 'r', 'l', 'b', 'd', 'm', 'e'];
+	var sides = ['u', 'f', 'r', 'l', 'b', 'd', 'm', 'e', 's'];
 	return function () {
 		if (document.querySelector('.cube-layer.turn')) return;
 		var side = prevSide;

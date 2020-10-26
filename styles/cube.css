@@ -281,29 +281,29 @@
 	transform: rotateY(180deg);
 }
 .turn-m1 {
-	transform: rotateY(-90deg);
-}
-.turn-m2 {
-	transform: rotateY(180deg);
-}
-.turn-m3 {
-	transform: rotateY(-90deg);
-}
-.turn-e1 {
-	transform: rotateX(90deg);
-}
-.turn-e2 {
-	transform: rotateX(180deg);
-}
-.turn-e3 {
 	transform: rotateX(-90deg);
 }
-.turn-a1 {
+.turn-m2 {
+	transform: rotateX(180deg);
+}
+.turn-m3 {
+	transform: rotateX(-90deg);
+}
+.turn-e1 {
+	transform: rotateY(90deg);
+}
+.turn-e2 {
+	transform: rotateY(180deg);
+}
+.turn-e3 {
+	transform: rotateY(-90deg);
+}
+.turn-s1 {
 	transform: rotateZ(90deg);
 }
-.turn-a2 {
+.turn-s2 {
 	transform: rotateZ(180deg);
 }
-.turn-a3 {
+.turn-s3 {
 	transform: rotateZ(-90deg);
 }
